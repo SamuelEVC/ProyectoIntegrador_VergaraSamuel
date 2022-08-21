@@ -9,27 +9,29 @@ div{
 /*Estilo de foto de perfil*/
 @media (min-width: 576px){
     #fotodeperfil{
-        position: absolute;
-        width: 40%;
+        /*position: absolute;*/
+        width: 90%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        left: 30%;
-        top:-10px;
+        left: 3%;
+        /*top:600px;*/
     }
 }
-@media (max-width: 576px){
+
+@media (max-width: 575px){
     #fotodeperfil{
         /*position: absolute;*/
         width: 60%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        left: 15%;
+        /*left: 33%;*/
         /*top:-10px;*/
     }
 }
 
+
 /*eticqueta codigo*/
 #nombre{
     font-weight: bold;
-    margin-top:5%;
+    margin-top:30%;
 }
