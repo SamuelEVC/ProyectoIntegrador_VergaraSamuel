@@ -37,12 +37,11 @@ public class PersonaController {
     }
     
     
-
-    @PutMapping("/personas/editar/(id)")
+    @PutMapping("/personas/editar/{id}")
     public Persona editPersona(@PathVariable Long id, 
-            @RequestParam("nombre") String nuevoNombre, 
-            @RequestParam("apellido") String nuevoApellido, 
-            @RequestParam("img") String nuevoImg){
+                               @RequestParam("nombre") String nuevoNombre, 
+                               @RequestParam("apellido") String nuevoApellido, 
+                               @RequestParam("img") String nuevoImg){
         Persona persona = ipersonaService.findPersona(id);
         persona.setNombre(nuevoNombre);
         persona.setApellido(nuevoApellido);
