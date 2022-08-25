@@ -15,8 +15,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 
+
+
 @Component
 public class JwtProvider {
+    
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
     
     @Value("${jwt.secret}")
@@ -29,7 +32,7 @@ public class JwtProvider {
         return Jwts.builder().setSubject(usuarioPrincipal.getUsername())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime()+expiration*1000))
-                .signWith(SignatureAlgorithm.ES512, secret)
+                .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
     
@@ -43,15 +46,15 @@ public class JwtProvider {
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;
         } catch (MalformedJwtException e){
-            logger.error("Token mal formado");
+            logger.error("Token mal formado.");
         }catch (UnsupportedJwtException e){
-            logger.error("Token no soporotado");
+            logger.error("Token no soporotado.");
         }catch (ExpiredJwtException e){
-            logger.error("Token expirado");
+            logger.error("Token expirado.");
         }catch (IllegalArgumentException e){
-            logger.error("Token vacio");
+            logger.error("Token vacio.");
         }catch (SignatureException e){
-            logger.error("Firma no válida");
+            logger.error("Firma no válida.");
         }
         return false;
     }
