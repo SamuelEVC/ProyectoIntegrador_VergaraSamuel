@@ -2,9 +2,15 @@
     padding: 25px;
 }
 div{
-    background: #a1b5cb;
+    background: #000000;
 }
-h1, h3{
+h1{
+    background-color: #424242;
+    color: #ffffff;
+}
 
+
+h2,h3,p {
     display: inline;
+    color: #ffffff;
 }

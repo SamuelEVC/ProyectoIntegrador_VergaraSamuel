@@ -2,8 +2,9 @@
     padding: 20px;
 }
 div{
-    background-color:#a1b5cb;
+    background-color:#000000;
     text-align: center;
+    
 }
 
 /*Estilo de foto de perfil*/
@@ -32,6 +33,11 @@ div{
 
 /*eticqueta codigo*/
 #nombre{
+    color: #ffe4e4;
     font-weight: bold;
     margin-top:30%;
+}
+#texto{
+    color: #d4caca;
+
 }
